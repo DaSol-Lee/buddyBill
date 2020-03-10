@@ -5,8 +5,9 @@ Group Project
 
 ## Table of Contents
 1. [Overview](#Overview)
-1. [Product Spec](#Product-Spec)
-1. [Wireframes](#Wireframes)
+2. [Product Spec](#Product-Spec)
+3. [Wireframes](#Wireframes)
+4. [OPTIONAL:] Existing API Endpoints
 
 ## Overview
 ### Description
@@ -86,4 +87,13 @@ Optional:
 ![wireframe1](https://user-images.githubusercontent.com/47064584/76282274-7cdf3800-6254-11ea-8625-6f292992719e.png)
 ![wireframe2](https://user-images.githubusercontent.com/47064584/76282276-7ea8fb80-6254-11ea-93b2-c4ad1bdc3b73.png)
 
+## [OPTIONAL:] Existing API Endpoints
 
+Google Cloud Vision API and Optimal Character Recognition (OCR)
+https://cloud.google.com/vision/docs/ocr
+
+from google.cloud import vision
+
+client_options = {'api_endpoint': 'eu-vision.googleapis.com'}
+
+client = vision.ImageAnnotatorClient(client_options=client_options)
