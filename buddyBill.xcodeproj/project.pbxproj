@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		CBE213AB241D3BC000ECB3D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE213AA241D3BC000ECB3D8 /* AppDelegate.swift */; };
 		CBE213AD241D3BC000ECB3D8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE213AC241D3BC000ECB3D8 /* SceneDelegate.swift */; };
-		CBE213AF241D3BC000ECB3D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE213AE241D3BC000ECB3D8 /* ViewController.swift */; };
 		CBE213B2241D3BC000ECB3D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBE213B0241D3BC000ECB3D8 /* Main.storyboard */; };
 		CBE213B4241D3BCA00ECB3D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBE213B3241D3BCA00ECB3D8 /* Assets.xcassets */; };
 		CBE213B7241D3BCA00ECB3D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBE213B5241D3BCA00ECB3D8 /* LaunchScreen.storyboard */; };
 		CBE213C2241D3BCB00ECB3D8 /* buddyBillTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE213C1241D3BCB00ECB3D8 /* buddyBillTests.swift */; };
 		CBE213CD241D3BCB00ECB3D8 /* buddyBillUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE213CC241D3BCB00ECB3D8 /* buddyBillUITests.swift */; };
+		CBE213DD241DACA300ECB3D8 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE213DC241DACA300ECB3D8 /* ScanViewController.swift */; };
+		CBE213DF241DADB300ECB3D8 /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE213DE241DADB300ECB3D8 /* ConfirmViewController.swift */; };
+		CBE213E1241DB2AD00ECB3D8 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE213E0241DB2AD00ECB3D8 /* AddViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +40,6 @@
 		CBE213A7241D3BC000ECB3D8 /* buddyBill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = buddyBill.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBE213AA241D3BC000ECB3D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBE213AC241D3BC000ECB3D8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CBE213AE241D3BC000ECB3D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CBE213B1241D3BC000ECB3D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CBE213B3241D3BCA00ECB3D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBE213B6241D3BCA00ECB3D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +50,9 @@
 		CBE213C8241D3BCB00ECB3D8 /* buddyBillUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = buddyBillUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBE213CC241D3BCB00ECB3D8 /* buddyBillUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buddyBillUITests.swift; sourceTree = "<group>"; };
 		CBE213CE241D3BCB00ECB3D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBE213DC241DACA300ECB3D8 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
+		CBE213DE241DADB300ECB3D8 /* ConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
+		CBE213E0241DB2AD00ECB3D8 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +105,13 @@
 			children = (
 				CBE213AA241D3BC000ECB3D8 /* AppDelegate.swift */,
 				CBE213AC241D3BC000ECB3D8 /* SceneDelegate.swift */,
-				CBE213AE241D3BC000ECB3D8 /* ViewController.swift */,
 				CBE213B0241D3BC000ECB3D8 /* Main.storyboard */,
 				CBE213B3241D3BCA00ECB3D8 /* Assets.xcassets */,
 				CBE213B5241D3BCA00ECB3D8 /* LaunchScreen.storyboard */,
 				CBE213B8241D3BCA00ECB3D8 /* Info.plist */,
+				CBE213DC241DACA300ECB3D8 /* ScanViewController.swift */,
+				CBE213DE241DADB300ECB3D8 /* ConfirmViewController.swift */,
+				CBE213E0241DB2AD00ECB3D8 /* AddViewController.swift */,
 			);
 			path = buddyBill;
 			sourceTree = "<group>";
@@ -259,9 +265,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBE213AF241D3BC000ECB3D8 /* ViewController.swift in Sources */,
+				CBE213E1241DB2AD00ECB3D8 /* AddViewController.swift in Sources */,
 				CBE213AB241D3BC000ECB3D8 /* AppDelegate.swift in Sources */,
 				CBE213AD241D3BC000ECB3D8 /* SceneDelegate.swift in Sources */,
+				CBE213DD241DACA300ECB3D8 /* ScanViewController.swift in Sources */,
+				CBE213DF241DADB300ECB3D8 /* ConfirmViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
