@@ -18,6 +18,7 @@
 		CBE213DD241DACA300ECB3D8 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE213DC241DACA300ECB3D8 /* ScanViewController.swift */; };
 		CBE213DF241DADB300ECB3D8 /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE213DE241DADB300ECB3D8 /* ConfirmViewController.swift */; };
 		CBE213E1241DB2AD00ECB3D8 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE213E0241DB2AD00ECB3D8 /* AddViewController.swift */; };
+		CBFF1BC7241EEA5200266241 /* AddBuddyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFF1BC6241EEA5200266241 /* AddBuddyCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		CBE213DC241DACA300ECB3D8 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
 		CBE213DE241DADB300ECB3D8 /* ConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
 		CBE213E0241DB2AD00ECB3D8 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		CBFF1BC6241EEA5200266241 /* AddBuddyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBuddyCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				CBE213DE241DADB300ECB3D8 /* ConfirmViewController.swift */,
 				CBE213E0241DB2AD00ECB3D8 /* AddViewController.swift */,
 				880BC028241DCD7C0058E833 /* ItemCell.swift */,
+				CBFF1BC6241EEA5200266241 /* AddBuddyCell.swift */,
 			);
 			path = buddyBill;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				CBE213AB241D3BC000ECB3D8 /* AppDelegate.swift in Sources */,
 				880BC029241DCD7C0058E833 /* ItemCell.swift in Sources */,
 				CBE213AD241D3BC000ECB3D8 /* SceneDelegate.swift in Sources */,
+				CBFF1BC7241EEA5200266241 /* AddBuddyCell.swift in Sources */,
 				CBE213DD241DACA300ECB3D8 /* ScanViewController.swift in Sources */,
 				CBE213DF241DADB300ECB3D8 /* ConfirmViewController.swift in Sources */,
 			);
