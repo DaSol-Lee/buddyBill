@@ -61,7 +61,6 @@ This iOS app will generate what each person will pay, including the tax and tip.
     * (optional) Scan Again Button -> Lens / Gallery -> Confirmation Screen
     * Looks Good Button -> Buddy Addition Screen
 * Buddy Addition Screen
-    * Add a Buddy Button -> Enter Names Bar
     * Done Button -> Selection Screen
 * Selection Screen
     * Done -> Moves to next person
@@ -70,6 +69,7 @@ This iOS app will generate what each person will pay, including the tax and tip.
     * Scan Again Button -> Start Screen
 
 ## Wireframes
+Note: Our app has been altered from the wireframe during development
 ![wireframe1](https://user-images.githubusercontent.com/47064584/76282274-7cdf3800-6254-11ea-8625-6f292992719e.png)
 ![wireframe2](https://user-images.githubusercontent.com/47064584/76282276-7ea8fb80-6254-11ea-93b2-c4ad1bdc3b73.png)
 
