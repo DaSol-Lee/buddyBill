@@ -16,9 +16,6 @@ class AddViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func addBuddyButton(_ sender: Any) {
-    }
-    
     @IBAction func doneButton(_ sender: Any) {
     }
     /*

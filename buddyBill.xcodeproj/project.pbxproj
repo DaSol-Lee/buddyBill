@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		880BC029241DCD7C0058E833 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880BC028241DCD7C0058E833 /* ItemCell.swift */; };
 		CBE213AB241D3BC000ECB3D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE213AA241D3BC000ECB3D8 /* AppDelegate.swift */; };
 		CBE213AD241D3BC000ECB3D8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE213AC241D3BC000ECB3D8 /* SceneDelegate.swift */; };
 		CBE213B2241D3BC000ECB3D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBE213B0241D3BC000ECB3D8 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		880BC028241DCD7C0058E833 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		CBE213A7241D3BC000ECB3D8 /* buddyBill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = buddyBill.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBE213AA241D3BC000ECB3D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBE213AC241D3BC000ECB3D8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				CBE213DC241DACA300ECB3D8 /* ScanViewController.swift */,
 				CBE213DE241DADB300ECB3D8 /* ConfirmViewController.swift */,
 				CBE213E0241DB2AD00ECB3D8 /* AddViewController.swift */,
+				880BC028241DCD7C0058E833 /* ItemCell.swift */,
 			);
 			path = buddyBill;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 			files = (
 				CBE213E1241DB2AD00ECB3D8 /* AddViewController.swift in Sources */,
 				CBE213AB241D3BC000ECB3D8 /* AppDelegate.swift in Sources */,
+				880BC029241DCD7C0058E833 /* ItemCell.swift in Sources */,
 				CBE213AD241D3BC000ECB3D8 /* SceneDelegate.swift in Sources */,
 				CBE213DD241DACA300ECB3D8 /* ScanViewController.swift in Sources */,
 				CBE213DF241DADB300ECB3D8 /* ConfirmViewController.swift in Sources */,

@@ -34,6 +34,7 @@ This iOS app will generate what each person will pay, including the tax and tip.
 - [ ] Venmo integration
 - [ ] Saved user profiles
 - [ ] History of past transactions
+- [ ] Delete items
 
 ### 2. Screen Archetypes
 * Start Screen

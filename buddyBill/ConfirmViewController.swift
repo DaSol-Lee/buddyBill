@@ -8,17 +8,28 @@
 
 import UIKit
 
-class ConfirmViewController: UIViewController {
-
+class ConfirmViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var TaxField: UITextField!
+    @IBOutlet weak var TipField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
+        return cell
+    }
 
     @IBAction func confirmButton(_ sender: Any) {
-        self.performSegue(withIdentifier: "confirmSegue", sender: nil)
+        self.performSegue(withIdentifier: "addSegue", sender: nil)
     }
     
 

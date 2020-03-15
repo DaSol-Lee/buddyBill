@@ -16,7 +16,7 @@ class ScanViewController: UIViewController {
     }
     
     @IBAction func scanButton(_ sender: Any) {
-        self.performSegue(withIdentifier: "scanSegue", sender: nil)
+        self.performSegue(withIdentifier: "confirmSegue", sender: nil)
     }
     
     
