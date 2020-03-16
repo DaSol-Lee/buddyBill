@@ -12,6 +12,8 @@ class CalculateBillViewController: UIViewController {
     
     var tax: Float!
     var tip: Float!
+    var itemOwnersDict: [String: Set<String>]!
+    var itemPricesDict: [String:Float]!
 
     override func viewDidLoad() {
         super.viewDidLoad()

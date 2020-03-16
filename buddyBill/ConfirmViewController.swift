@@ -42,8 +42,8 @@ class ConfirmViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let addViewController = segue.destination as! AddViewController
-        addViewController.tax = Float(TaxField.text!)
-        addViewController.tip = Float(TipField.text!)
+        addViewController.tax = Float(TaxField.text ?? "0")
+        addViewController.tip = Float(TipField.text ?? "0")
         addViewController.itemArray = itemArray
         addViewController.priceArray = priceArray
     }

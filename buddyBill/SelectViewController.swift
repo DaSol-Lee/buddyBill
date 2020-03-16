@@ -8,95 +8,82 @@
 
 import UIKit
 
-class SelectViewController: UIViewController, SelectCellDelegate, UITableViewDataSource, UITableViewDelegate {
+class SelectViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     //variables for other segues
     var tax: Float!
     var tip: Float!
-    
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
 
     var itemArray: Array<String>!
     var priceArray: Array<Float>!
+    var nameArray: NSMutableArray! = NSMutableArray()
     
-    var textArray: NSMutableArray! = NSMutableArray()
+    var itemOwnersDict = [String: Set<String>]()
+    var itemPricesDict = [String:Float]()
     
     var numBuddies = 0
-    
-    //var foodPersonDict: NSDictionary = [String:NSMutableArray()]
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        nameLabel.text = self.textArray.object(at: 0) as? String
-        //dump(textArray)
+        tableView.allowsMultipleSelection = true
+        
+        for (index, item) in itemArray.enumerated() {
+            itemPricesDict[item]=priceArray[index]
+        }
+        
+        nameLabel.text = self.nameArray.object(at: 0) as? String
         numBuddies = numBuddies + 1
-        //print(numBuddies)
-        self.tableView.rowHeight = UITableView.automaticDimension
-        self.tableView.estimatedRowHeight = 44.0
-        
-        
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func onDoneButton(_ sender: Any) {
-        if numBuddies == self.textArray.count {
-            
-            self.performSegue(withIdentifier: "resultsSegue", sender: nil)
-            
-            
+        let selectedIndexPaths = tableView.indexPathsForSelectedRows
+        for indexPath in selectedIndexPaths! {
+            let item = itemArray![indexPath.row]
+            if itemOwnersDict.keys.contains(item) {
+                itemOwnersDict[item]!.insert(nameLabel.text!)
+            } else {
+                itemOwnersDict[item]=Set([nameLabel.text!])
+            }
+        }
+        print(itemOwnersDict)
+        
+        if numBuddies == self.nameArray.count {
+            self.performSegue(withIdentifier: "calculateBillSegue", sender: nil)
         }
         else{
-            nameLabel.text = self.textArray.object(at: numBuddies) as? String
+            tableView.reloadData()
+            nameLabel.text = self.nameArray.object(at: numBuddies) as? String
             numBuddies = numBuddies + 1
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //print(itemArray.count)
         return itemArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let cell = UITableViewCell()
-        //cell.textLabel!.text = "row: \(indexPath.row)"
         let cell = tableView.dequeueReusableCell(withIdentifier: "SelectCell", for: indexPath) as! SelectCell
-        //cell.itemLabel.text = "hi"
-        //7. delegate view controller instance to the cell
-        cell.delegate = self as? SelectCellDelegate
         cell.itemLabel.text = self.itemArray[indexPath.row]
         cell.priceLabel.text = String(self.priceArray[indexPath.row])
+        
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = UIColor(red: 210/255, green: 181/255, blue: 156/255, alpha: 0.3)
+        cell.selectedBackgroundView = backgroundView
         
         return cell
     }
     
-    func onMineButton(cell: SelectCell) {
-        //Get the indexpath of cell where button was tapped
-        let indexPath = self.tableView.indexPath(for: cell)
-        //print(indexPath!.row)
-        //print(cell.itemLabel.text!) // hamburger
-        //print(cell.priceLabel.text!) // price
-        //print(nameLabel.text as Any) // person name
-        //foodPersonDict[cell.itemLabel.text!]! += [String(nameLabel.text!)]
-        //foodPriceDict[cell.itemLabel.text!] = (cell.priceLabel.text! as NSString).doubleValue
-        
-        
-    }
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-        if segue.destination is ResultsViewController
-        {
-            //let vc = segue.destination as? ResultsViewController
-            //vc?.textArray = textArray
-        }
+        let calculateBillViewController = segue.destination as! CalculateBillViewController
+        calculateBillViewController.tax = tax
+        calculateBillViewController.tip = tip
+        calculateBillViewController.itemOwnersDict = itemOwnersDict
+        calculateBillViewController.itemPricesDict = itemPricesDict
     }
     
 

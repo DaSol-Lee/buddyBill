@@ -19,13 +19,13 @@ class AddViewController: UIViewController, UITableViewDataSource, UITableViewDel
 
     @IBOutlet weak var addNameField: UITextField!
     @IBOutlet weak var tableView: UITableView!
-    var textArray: NSMutableArray! = NSMutableArray()
+    var nameArray: NSMutableArray! = NSMutableArray()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        addNameField.placeholder = "Enter Buddy Name Here! :)"
+        addNameField.placeholder = "Enter Buddy Name Here"
         tableView.dataSource = self
         tableView.delegate = self
     }
@@ -34,26 +34,26 @@ class AddViewController: UIViewController, UITableViewDataSource, UITableViewDel
     @IBAction func onAddButton(_ sender: Any) {
         
         var input = addNameField.text
-        self.textArray.add(input)
+        self.nameArray.add(input)
         tableView.reloadData()
         addNameField.text = ""
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.textArray.count
+        return self.nameArray.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AddBuddyCell", for: indexPath) as! AddBuddyCell
-        cell.nameLabel.text = self.textArray.object(at: indexPath.row) as? String
+        cell.nameLabel.text = self.nameArray.object(at: indexPath.row) as? String
         return cell
     }
     
     
     @IBAction func onDoneButton(_ sender: Any) {
-        if textArray.count != 0 {
+        if nameArray.count != 0 {
             self.performSegue(withIdentifier: "selectSegue", sender: nil)
         }
     }
@@ -63,7 +63,7 @@ class AddViewController: UIViewController, UITableViewDataSource, UITableViewDel
         if segue.destination is SelectViewController
         {
             let vc = segue.destination as! SelectViewController
-            vc.textArray = textArray
+            vc.nameArray = nameArray
             vc.tax = tax
             vc.tip = tip
             vc.itemArray = itemArray
