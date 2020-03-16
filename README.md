@@ -94,11 +94,11 @@ We are disabling the API Key because we do not want to get charged.
 You can request a free trial key on Taggun's website.
 [https://www.taggun.io/help](https://www.taggun.io/help)
 
-Base URL - ["https://api.taggun.io]("https://api.taggun.io)
+Base URL - [https://api.taggun.io](https://api.taggun.io)
 
    HTTP Verb | Endpoint | Description
    ----------|----------|------------
-    `POST`    | /api/receipt/v1/verbose/file | transcribe a receipt by uploading an image file and return detailed result
+    `POST`   | /api/receipt/v1/verbose/file | transcribe a receipt by uploading an image file and return detailed result
   
   ## Video Walkthrough
-  <img src='http://g.recordit.co/VICEBmptzt.gif' title='Video Walkthrough' width='50%' alt='Video Walkthrough' /> <img src ='receiptSample.jpg' title='Receipt Sample' width='50%' alt ='Receipt Sample' />
+  <img src='http://g.recordit.co/VICEBmptzt.gif' title='Video Walkthrough' width='40%' alt='Video Walkthrough' /> <img src ='receiptSample.jpg' title='Receipt Sample' width='40%' alt ='Receipt Sample' />
