@@ -62,7 +62,9 @@ class AddViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     @IBAction func onDoneButton(_ sender: Any) {
-        self.performSegue(withIdentifier: "selectSegue", sender: nil)
+        if textArray.count != 0 {
+            self.performSegue(withIdentifier: "selectSegue", sender: nil)
+        }
     }
     
     
