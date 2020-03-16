@@ -209,20 +209,20 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Any Changes?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KcN-UJ-yUw">
-                                <rect key="frame" x="122" y="64" width="170.5" height="29.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tax? Tip?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KcN-UJ-yUw">
+                                <rect key="frame" x="151" y="64" width="112" height="30"/>
                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ITEM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Djj-SH-ZDd">
-                                <rect key="frame" x="20" y="121" width="39" height="20"/>
+                                <rect key="frame" x="20" y="121.5" width="39" height="20"/>
                                 <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PRICE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34I-dc-FhB">
-                                <rect key="frame" x="292" y="121" width="102" height="20"/>
+                                <rect key="frame" x="292" y="121.5" width="102" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="102" id="0b2-TM-qjo"/>
                                 </constraints>
@@ -642,7 +642,7 @@
                                     <action selector="confirmButton:" destination="vk4-X1-Vc9" eventType="touchUpInside" id="BOb-BY-VPB"/>
                                     <action selector="onScanAgain:" destination="1wB-fv-o9W" eventType="touchUpInside" id="rnj-ZO-8Pg"/>
                                     <action selector="scanButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jqO-Kk-OJl"/>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="resultsSegue" modalPresentationStyle="fullScreen" id="wXq-sK-ZGQ"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="scanSegue" modalPresentationStyle="fullScreen" id="wXq-sK-ZGQ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -663,6 +663,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OBP-7r-fFn"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="wMj-NL-WXK" id="Xb1-na-pmh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Td2-cK-0vR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

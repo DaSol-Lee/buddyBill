@@ -41,25 +41,30 @@ class SelectViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     @IBAction func onDoneButton(_ sender: Any) {
+        
         let selectedIndexPaths = tableView.indexPathsForSelectedRows
-        for indexPath in selectedIndexPaths! {
-            let item = itemArray![indexPath.row]
-            if itemOwnersDict.keys.contains(item) {
-                itemOwnersDict[item]!.insert(nameLabel.text!)
-            } else {
-                itemOwnersDict[item]=Set([nameLabel.text!])
+        
+        if (selectedIndexPaths != nil){
+            for indexPath in selectedIndexPaths! {
+                let item = itemArray![indexPath.row]
+                if itemOwnersDict.keys.contains(item) {
+                    itemOwnersDict[item]!.insert(nameLabel.text!)
+                } else {
+                    itemOwnersDict[item]=Set([nameLabel.text!])
+                }
+            }
+            //print(itemOwnersDict)
+            
+            if numBuddies == self.nameArray.count {
+                self.performSegue(withIdentifier: "calculateBillSegue", sender: nil)
+            }
+            else{
+                tableView.reloadData()
+                nameLabel.text = self.nameArray.object(at: numBuddies) as? String
+                numBuddies = numBuddies + 1
             }
         }
-        //print(itemOwnersDict)
         
-        if numBuddies == self.nameArray.count {
-            self.performSegue(withIdentifier: "calculateBillSegue", sender: nil)
-        }
-        else{
-            tableView.reloadData()
-            nameLabel.text = self.nameArray.object(at: numBuddies) as? String
-            numBuddies = numBuddies + 1
-        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

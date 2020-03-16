@@ -48,7 +48,7 @@ class CalculateBillViewController: UIViewController {
             dump(personalBillDict)
         }
         
-        
+        self.performSegue(withIdentifier: "resultsSegue", sender: nil)
     }
 
 

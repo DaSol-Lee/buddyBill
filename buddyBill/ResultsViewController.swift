@@ -13,8 +13,12 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
     var personalBillDict: [String:Float]!
     var personalBillNames: Array<String>!
 
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.dataSource = self
+        tableView.delegate = self
         personalBillNames = Array(personalBillDict.keys)
     }
     
@@ -27,6 +31,8 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
         let name = self.personalBillNames[indexPath.row]
         cell.nameLabel.text = name
         cell.personalBillLabel.text = String(self.personalBillDict[name]!)
+        print(cell.nameLabel.text)
+        print(cell.personalBillLabel.text)
         return cell
     }
     
