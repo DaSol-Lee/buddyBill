@@ -21,6 +21,8 @@ class SelectViewController: UIViewController, SelectCellDelegate, UITableViewDat
     
     var numBuddies = 0
     
+    //var foodPersonDict: NSDictionary = [String:NSMutableArray()]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
