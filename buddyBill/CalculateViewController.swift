@@ -17,30 +17,54 @@ class CalculateViewController: UIViewController {
     }
         
     var unscaledImage: UIImage!
-    var receiptItems = [[String:Any]]()
+    var receiptAmounts = [[String:Any]]()
+    
+    var itemArray = [String]()
+    var priceArray = [Float]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         postRequest()
         
-        // do calcs
+        getReceiptArrays()
+           
+        self.performSegue(withIdentifier: "confirmSegue", sender: nil)
+    }
+    
+    func getReceiptArrays() {
+        let semaphore = DispatchSemaphore(value: 0)
         
-        // prep list for segue
+        for amount in self.receiptAmounts {
+            var line = amount["text"] as! String
+            line = line.lowercased()
+            if !line.contains("tax") && !line.contains("total") && !line.contains("sub") {
+                let words = line.components(separatedBy: " ")
+                itemArray.append(words.prefix(words.count-1).joined(separator: " "))
+                priceArray.append(Float(words.last!)!)
+            }
+        }
+        print("itemArray", itemArray)
+        print("priceArray", priceArray)
+        semaphore.signal()
         
-        // self.performSegue(withIdentifier: "confirmSegue", sender: nil)
+        semaphore.wait()
     }
     
     func postRequest() {
+        let semaphore = DispatchSemaphore(value: 0)
+        
         let parameters = ["language": "en"]
         guard let mediaImage = Media(withImage: unscaledImage, forKey: "file") else { return }
         
-//        guard let url = URL(string: "https://api.taggun.io/api/receipt/v1/verbose/file") else { return }
-        guard let url = URL(string: "https://api.taggun.io/api/receipt/v1/verbose/file?apikey=d6a12960667e11ea8bfadfb7eb1aa8b5") else { return }
+        guard let url = URL(string: "https://api.taggun.io/api/receipt/v1/verbose/file?apikey=YOUR_KEY_HERE}") else { return }
         var request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         request.httpMethod = "POST"
         
         request.setValue("multipart/form-data; boundary=OurBoundary", forHTTPHeaderField: "Content-Type")
-        request.setValue("d6a12960667e11ea8bfadfb7eb1aa8b5", forHTTPHeaderField: "apikey")
+        request.setValue("YOUR_KEY_HERE", forHTTPHeaderField: "apikey")
         
         let dataBody = createDataBody(withParameters: parameters, media: mediaImage, boundary: "OurBoundary")
         request.httpBody = dataBody
@@ -48,17 +72,17 @@ class CalculateViewController: UIViewController {
         let session = URLSession.shared
         session.dataTask(with: request) { (data, response, error) in
             if let error = error {
-                print("ERROR IS\n======", error.localizedDescription)
-            } else if let response = response {
-                print("RESPONSE IS\n======", response)
+                print("ERROR IS\n", error.localizedDescription)
             }
             
             if let data = data {
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
-                self.receiptItems = dataDictionary["amounts"] as! [[String:Any]]
-                print(self.receiptItems)
+                self.receiptAmounts = dataDictionary["amounts"] as! [[String:Any]]
+                semaphore.signal()
             }
         }.resume()
+        
+        semaphore.wait()
     }
     
     func createDataBody(withParameters params: [String: String]?, media: Media?, boundary: String) -> Data {
@@ -89,8 +113,9 @@ class CalculateViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) { // mnu
-        // Get the new view controller using segue.destination.
-        // Pass the selected receipt lines to the confirm view controller.
+        let confirmViewController = segue.destination as! ConfirmViewController
+        confirmViewController.itemArray = itemArray
+        confirmViewController.priceArray = priceArray
     }
 
 }
