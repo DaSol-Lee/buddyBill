@@ -33,6 +33,7 @@ class ConfirmViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
         cell.itemLabel.text = self.itemArray[indexPath.row]
         cell.priceLabel.text = String(self.priceArray[indexPath.row])
+        cell.selectionStyle = .none
         return cell
     }
 
@@ -42,8 +43,8 @@ class ConfirmViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let addViewController = segue.destination as! AddViewController
-        addViewController.tax = Float(TaxField.text ?? "0")
-        addViewController.tip = Float(TipField.text ?? "0")
+        addViewController.tax = Float(TaxField.text!)
+        addViewController.tip = Float(TipField.text!)
         addViewController.itemArray = itemArray
         addViewController.priceArray = priceArray
     }

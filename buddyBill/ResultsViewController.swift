@@ -9,7 +9,7 @@
 import UIKit
 
 class ResultsViewController: UIViewController {
-
+    var personalBillDict: [String:Float]!
     override func viewDidLoad() {
         super.viewDidLoad()
 

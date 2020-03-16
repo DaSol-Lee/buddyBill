@@ -50,7 +50,7 @@ class SelectViewController: UIViewController, UITableViewDataSource, UITableView
                 itemOwnersDict[item]=Set([nameLabel.text!])
             }
         }
-        print(itemOwnersDict)
+        //print(itemOwnersDict)
         
         if numBuddies == self.nameArray.count {
             self.performSegue(withIdentifier: "calculateBillSegue", sender: nil)
