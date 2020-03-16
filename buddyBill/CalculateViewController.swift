@@ -1,22 +1,26 @@
 //
-//  ScanViewController.swift
+//  CalculateViewController.swift
 //  buddyBill
 //
-//  Created by Da Sol Lee on 3/14/20.
+//  Created by Greta Yu on 3/15/20.
 //  Copyright © 2020 dasol. All rights reserved.
 //
 
 import UIKit
 
-class ScanViewController: UIViewController {
+class CalculateViewController: UIViewController {
+    @IBAction func skipButton(_ sender: Any) {
+        //for testing only
+        self.performSegue(withIdentifier: "confirmSegue", sender: nil)
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
     }
-    
-    @IBAction func scanButton(_ sender: Any) {
-        self.performSegue(withIdentifier: "calculateSegue", sender: nil)
-    }
-    
     
 
     /*

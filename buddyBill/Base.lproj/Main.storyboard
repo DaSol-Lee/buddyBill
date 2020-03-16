@@ -50,7 +50,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="VaS-zz-8rS">
-                                <rect key="frame" x="95.5" y="377" width="223" height="142"/>
+                                <rect key="frame" x="-16" y="306" width="446" height="284"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                         </subviews>
@@ -69,12 +69,50 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <segue destination="vk4-X1-Vc9" kind="presentation" identifier="confirmSegue" modalPresentationStyle="fullScreen" id="G6r-HB-u57"/>
+                        <segue destination="c4N-0V-VBH" kind="presentation" identifier="calculateSegue" modalPresentationStyle="fullScreen" id="54q-zc-qej"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="121.875"/>
+            <point key="canvasLocation" x="-819" y="122"/>
+        </scene>
+        <!--Calculate View Controller-->
+        <scene sceneID="lmH-aF-E98">
+            <objects>
+                <viewController id="c4N-0V-VBH" customClass="CalculateViewController" customModule="buddyBill" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AGP-aM-8e7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hang Tight! We're getting your items" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Min-56-FFZ">
+                                <rect key="frame" x="58" y="419" width="298.5" height="58.5"/>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oze-Ng-o2d">
+                                <rect key="frame" x="111" y="629" width="192" height="144"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="testing skip this screen" backgroundImage="tanBackground"/>
+                                <connections>
+                                    <action selector="skipButton:" destination="c4N-0V-VBH" eventType="touchUpInside" id="G5H-hm-qfb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Min-56-FFZ" firstAttribute="centerY" secondItem="AGP-aM-8e7" secondAttribute="centerY" id="O4V-QC-I8t"/>
+                            <constraint firstItem="Min-56-FFZ" firstAttribute="centerX" secondItem="AGP-aM-8e7" secondAttribute="centerX" id="Ohh-rC-X3q"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Vag-39-nMs"/>
+                    </view>
+                    <connections>
+                        <segue destination="vk4-X1-Vc9" kind="presentation" identifier="confirmSegue" modalPresentationStyle="fullScreen" id="ck7-WR-gS5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dh0-hh-rEq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="56.521739130434788" y="121.875"/>
         </scene>
         <!--Confirm View Controller-->
         <scene sceneID="qDB-I4-nyj">
@@ -244,7 +282,7 @@
         <scene sceneID="Dr8-j7-apU">
             <objects>
                 <viewController id="k5g-pU-8Br" customClass="AddViewController" customModule="buddyBill" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="N7C-Fu-75k">
+                    <view key="view" contentMode="scaleToFill" id="N7C-Fu-75k">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -294,7 +332,7 @@
                                     <constraint firstAttribute="width" constant="500" id="bg7-qO-mnn"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oG7-5e-kyr">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oG7-5e-kyr">
                                 <rect key="frame" x="92" y="775" width="230" height="67"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                 <constraints>
