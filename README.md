@@ -101,5 +101,5 @@ Base URL - ["https://api.taggun.io]("https://api.taggun.io)
     `POST`    | /api/receipt/v1/verbose/file | transcribe a receipt by uploading an image file and return detailed result
   
   ## Video Walkthrough
-  <img src='http://g.recordit.co/VICEBmptzt.gif' title='Video Walkthrough' width='50%' alt='Video Walkthrough' />
-  <img src ='receiptSample.jpg' title='Receipt Sample' width='50%' alt ='Receipt Sample' />
+  <img src='http://g.recordit.co/VICEBmptzt.gif' title='Video Walkthrough' width='35%' alt='Video Walkthrough' />
+  <img src ='receiptSample.jpg' title='Receipt Sample' width='35%' alt ='Receipt Sample' />
