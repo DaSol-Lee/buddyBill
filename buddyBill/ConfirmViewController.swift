@@ -13,6 +13,9 @@ class ConfirmViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var TaxField: UITextField!
     @IBOutlet weak var TipField: UITextField!
     
+    var itemArray: Array<String>!
+    var priceArray: Array<Float>!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
