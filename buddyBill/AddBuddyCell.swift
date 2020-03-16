@@ -14,19 +14,6 @@ class AddBuddyCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-    /*public func configure(text: String?, placeholder: String) {
-        textLabel.text = text
-
-        textLabel.accessibilityValue = text
-        textLabel.accessibilityLabel = placeholder
-    }*/
     
-    //override func setSelected(_ selected: Bool, animated: Bool) {
-        //super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    //}
-
 }

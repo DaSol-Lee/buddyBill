@@ -10,12 +10,16 @@ import UIKit
 
 class SelectViewController: UIViewController, SelectCellDelegate, UITableViewDataSource, UITableViewDelegate {
     
+    //variables for other segues
+    var tax: Float!
+    var tip: Float!
+    
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
 
-    var itemArray = ["hamburger", "pizza","salad"]
-    var priceArray = [8, 4.50, 3]
+    var itemArray: Array<String>!
+    var priceArray: Array<Float>!
     
     var textArray: NSMutableArray! = NSMutableArray()
     

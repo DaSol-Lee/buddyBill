@@ -31,18 +31,6 @@ class ScanViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         unscaledImage = info[.originalImage] as! UIImage
         
-        // calculates reduced dimensions
-//        let scale = 500 / image.size.width
-//        let newHeight = image.size.height * scale
-//        let size = CGSize(width: 500, height: newHeight)
-        
-        // creates scaled image
-//        let renderer = UIGraphicsImageRenderer(size: size)
-//        scaledImage = (renderer.image { (context) in
-//                        image.draw(in: CGRect(origin: .zero, size: size))
-//                      }).pngData()
-        // let scaledImage = image.af_imageAspectScaled(toFill: size)
-
         dismiss(animated: true, completion: nil)
         
         self.performSegue(withIdentifier: "calculateSegue", sender: nil)

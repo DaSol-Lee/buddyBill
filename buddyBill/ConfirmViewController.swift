@@ -10,6 +10,7 @@ import UIKit
 
 class ConfirmViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var TaxField: UITextField!
     @IBOutlet weak var TipField: UITextField!
     
@@ -18,16 +19,20 @@ class ConfirmViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        tableView.dataSource = self
+        tableView.delegate = self
+        TaxField.placeholder = "0"
+        TipField.placeholder = "0"
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return itemArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
+        cell.itemLabel.text = self.itemArray[indexPath.row]
+        cell.priceLabel.text = String(self.priceArray[indexPath.row])
         return cell
     }
 
@@ -35,16 +40,12 @@ class ConfirmViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.performSegue(withIdentifier: "addSegue", sender: nil)
     }
     
-
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        let addViewController = segue.destination as! AddViewController
+        addViewController.tax = Float(TaxField.text!)
+        addViewController.tip = Float(TipField.text!)
+        addViewController.itemArray = itemArray
+        addViewController.priceArray = priceArray
     }
-    */
 
 }

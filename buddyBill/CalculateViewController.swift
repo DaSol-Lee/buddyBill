@@ -10,11 +10,6 @@
 import UIKit
 
 class CalculateViewController: UIViewController {
-    
-    //for testing only
-    @IBAction func skipButton(_ sender: Any) {
-        self.performSegue(withIdentifier: "confirmSegue", sender: nil)
-    }
         
     var unscaledImage: UIImage!
     var receiptAmounts = [[String:Any]]()
@@ -59,12 +54,12 @@ class CalculateViewController: UIViewController {
         let parameters = ["language": "en"]
         guard let mediaImage = Media(withImage: unscaledImage, forKey: "file") else { return }
         
-        guard let url = URL(string: "https://api.taggun.io/api/receipt/v1/verbose/file?apikey=YOUR_KEY_HERE}") else { return }
+        guard let url = URL(string: "https://api.taggun.io/api/receipt/v1/verbose/file?apikey=d6a12960667e11ea8bfadfb7eb1aa8b5") else { return }
         var request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         request.httpMethod = "POST"
         
         request.setValue("multipart/form-data; boundary=OurBoundary", forHTTPHeaderField: "Content-Type")
-        request.setValue("YOUR_KEY_HERE", forHTTPHeaderField: "apikey")
+        request.setValue("d6a12960667e11ea8bfadfb7eb1aa8b5", forHTTPHeaderField: "apikey")
         
         let dataBody = createDataBody(withParameters: parameters, media: mediaImage, boundary: "OurBoundary")
         request.httpBody = dataBody
@@ -73,6 +68,8 @@ class CalculateViewController: UIViewController {
         session.dataTask(with: request) { (data, response, error) in
             if let error = error {
                 print("ERROR IS\n", error.localizedDescription)
+            } else if let response = response {
+                print("RESPONSE IS\n", response)
             }
             
             if let data = data {
@@ -112,7 +109,7 @@ class CalculateViewController: UIViewController {
         return body
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) { // mnu
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let confirmViewController = segue.destination as! ConfirmViewController
         confirmViewController.itemArray = itemArray
         confirmViewController.priceArray = priceArray

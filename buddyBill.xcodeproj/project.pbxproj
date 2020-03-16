@@ -10,6 +10,7 @@
 		880BC029241DCD7C0058E833 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880BC028241DCD7C0058E833 /* ItemCell.swift */; };
 		8872810A241F28EC00513A78 /* CalculateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88728109241F28EC00513A78 /* CalculateViewController.swift */; };
 		8872810C241F2B8400513A78 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8872810B241F2B8400513A78 /* Media.swift */; };
+		8872810E241F7B8800513A78 /* CalculateBillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8872810D241F7B8800513A78 /* CalculateBillViewController.swift */; };
 		CBE213AB241D3BC000ECB3D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE213AA241D3BC000ECB3D8 /* AppDelegate.swift */; };
 		CBE213AD241D3BC000ECB3D8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE213AC241D3BC000ECB3D8 /* SceneDelegate.swift */; };
 		CBE213B2241D3BC000ECB3D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBE213B0241D3BC000ECB3D8 /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 		880BC028241DCD7C0058E833 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		88728109241F28EC00513A78 /* CalculateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateViewController.swift; sourceTree = "<group>"; };
 		8872810B241F2B8400513A78 /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
+		8872810D241F7B8800513A78 /* CalculateBillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateBillViewController.swift; sourceTree = "<group>"; };
 		CBE213A7241D3BC000ECB3D8 /* buddyBill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = buddyBill.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBE213AA241D3BC000ECB3D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBE213AC241D3BC000ECB3D8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				CBFF1BCA241F2E9000266241 /* ResultsViewController.swift */,
 				CBFF1BCC241F36DC00266241 /* SelectCell.swift */,
 				8872810B241F2B8400513A78 /* Media.swift */,
+				8872810D241F7B8800513A78 /* CalculateBillViewController.swift */,
 			);
 			path = buddyBill;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				CBFF1BC9241F1D3400266241 /* SelectViewController.swift in Sources */,
 				CBFF1BC7241EEA5200266241 /* AddBuddyCell.swift in Sources */,
 				CBFF1BCD241F36DC00266241 /* SelectCell.swift in Sources */,
+				8872810E241F7B8800513A78 /* CalculateBillViewController.swift in Sources */,
 				CBE213DD241DACA300ECB3D8 /* ScanViewController.swift in Sources */,
 				CBE213DF241DADB300ECB3D8 /* ConfirmViewController.swift in Sources */,
 			);

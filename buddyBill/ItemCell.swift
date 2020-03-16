@@ -10,8 +10,10 @@ import UIKit
 
 class ItemCell: UITableViewCell {
     
-    @IBOutlet weak var ItemField: UITextField!
-    @IBOutlet weak var PriceField: UITextField!
+
+    @IBOutlet weak var itemLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
