@@ -12,10 +12,9 @@ class AddViewController: UIViewController, UITableViewDataSource, UITableViewDel
 
     @IBOutlet weak var countField: UITextField!
     
-    var textArray: NSMutableArray! = NSMutableArray()
-    
     @IBOutlet weak var tableView: UITableView!
-    
+     
+    var textArray: NSMutableArray! = NSMutableArray()
 
     @IBAction func sendMessageButton(_ sender: Any) {
         
@@ -56,20 +55,29 @@ class AddViewController: UIViewController, UITableViewDataSource, UITableViewDel
         let cell = tableView.dequeueReusableCell(withIdentifier: "AddBuddyCell", for: indexPath) as! AddBuddyCell
 
         //cell.configure(text: "", placeholder: "Enter some text!")
-        cell.textField.delegate = self as? UITextFieldDelegate
-        cell.textField.text = self.textArray.object(at: indexPath.row) as? String
-    
+        //cell.textField.delegate = self as? UITextFieldDelegate
+        //cell.textField.text = self.textArray.object(at: indexPath.row) as? String
+        cell.nameLabel.text = self.textArray.object(at: indexPath.row) as? String
         return cell
     }
     
-    /*
+    @IBAction func onDoneButton(_ sender: Any) {
+        self.performSegue(withIdentifier: "selectSegue", sender: nil)
+    }
+    
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.destination is SelectViewController
+        {
+            let vc = segue.destination as? SelectViewController
+            vc?.textArray = textArray
+        }
     }
-    */
+    
 
 }

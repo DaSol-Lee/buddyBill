@@ -10,19 +10,18 @@ import UIKit
 
 class AddBuddyCell: UITableViewCell {
     
-    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var nameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-    public func configure(text: String?, placeholder: String) {
-        textField.text = text
-        textField.placeholder = placeholder
+    /*public func configure(text: String?, placeholder: String) {
+        textLabel.text = text
 
-        textField.accessibilityValue = text
-        textField.accessibilityLabel = placeholder
-    }
+        textLabel.accessibilityValue = text
+        textLabel.accessibilityLabel = placeholder
+    }*/
     
     //override func setSelected(_ selected: Bool, animated: Bool) {
         //super.setSelected(selected, animated: animated)
